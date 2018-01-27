@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.9" jmeter="3.0 r1743807">
+  <hashTree>
+    <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="线程组" enabled="true">
+      <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+        <boolProp name="LoopController.continue_forever">false</boolProp>
+        <stringProp name="LoopController.loops">20</stringProp>
+      </elementProp>
+      <stringProp name="ThreadGroup.num_threads">50</stringProp>
+      <stringProp name="ThreadGroup.ramp_time">20</stringProp>
+      <longProp name="ThreadGroup.start_time">1512446197000</longProp>
+      <longProp name="ThreadGroup.end_time">1512446197000</longProp>
+      <boolProp name="ThreadGroup.scheduler">false</boolProp>
+      <stringProp name="ThreadGroup.duration"></stringProp>
+      <stringProp name="ThreadGroup.delay"></stringProp>
+    </ThreadGroup>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+        <collectionProp name="HeaderManager.headers"/>
+      </HeaderManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP授权管理器" enabled="true">
+        <collectionProp name="AuthManager.auth_list"/>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie 管理器" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        <stringProp name="CookieManager.policy">standard</stringProp>
+        <stringProp name="CookieManager.implementation">org.apache.jmeter.protocol.http.control.HC4CookieHandler</stringProp>
+      </CookieManager>
+      <hashTree/>
+      <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="仅一次控制器" enabled="true"/>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="domainName" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">colourlife</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">domainName</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">test01</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">username</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">123456</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">password</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">bpm.ice.colourlife.com</stringProp>
+          <stringProp name="HTTPSampler.port">80</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/portal/login/login.action</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+      <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="save_and_start_flow" enabled="true">
+        <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="" elementType="HTTPArgument">
+              <boolProp name="HTTPArgument.always_encode">false</boolProp>
+              <stringProp name="Argument.value">contextPath=&amp;handleUrl=&amp;_templateForm=&amp;_flowType=80&amp;_currid=&amp;button_act=%E6%8F%90%E4%BA%A4&amp;struts.token.name=token&amp;token=6JRQYGSX9G6QH4MAOD9PPLTHT4IIZUY3&amp;_signature=&amp;submitTo=&amp;_subFlowApproverInfo=&amp;_circulatorInfo=&amp;_subFlowApproverInfoAll=&amp;_attitude=&amp;options=&amp;_reminderContent=&amp;cxmbh=100011&amp;csscplx=%E5%8D%B3%E6%97%B6%E5%88%A9%E7%9B%8A%E5%88%86%E9%85%8D%E7%B3%BB%E7%BB%9F&amp;cxmmc=jmeter%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95&amp;cglcase=100001&amp;cxmlx=&amp;cxmlx=%E6%96%B0%E5%A2%9E%E9%9C%80%E6%B1%82&amp;cxmdj=%E4%B8%80%E8%88%AC&amp;cndxs=50&amp;cxmnrms=jmeter%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95&amp;ckfzcyykfl=jmeter%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95&amp;apptime=&amp;_flowid=11e7-d409-6997f51e-bedb-ff83e66ce862&amp;_currpage=1&amp;_pagelines=10&amp;_rowcount=80&amp;domain=11e7-8d55-afc32e69-8d1c-edfa8b3b5e37&amp;content.id=&amp;content.sortId=&amp;application=11e7-8d55-9c8815e6-8d1c-edfa8b3b5e37&amp;struts.token.name=document.token&amp;document.token=906FVEMZBWRJTMEW6X8PYWH0A7FW2TV7&amp;content.applicationid=11e7-8d55-9c8815e6-8d1c-edfa8b3b5e37&amp;content.stateid=&amp;flowid=11e7-d409-6997f51e-bedb-ff83e66ce862&amp;view_id=11e7-d40e-59f0238d-bedb-ff83e66ce862&amp;message=&amp;signatureExist=false&amp;isComplete=&amp;formid=11e7-d409-2fb403be-bedb-ff83e66ce862&amp;applicationid=11e7-8d55-9c8815e6-8d1c-edfa8b3b5e37&amp;mGetDocumentUrl=http%3A%2F%2Fbpm.ice.colourlife.com%3A80%2Fportal%2Fportal%2Fdynaform%2Fmysignature%2FgetDocument.action&amp;mLoginname=test01&amp;openType=&amp;operation=doSave&amp;_docid=&amp;isRelate=&amp;_formid=11e7-d409-2fb403be-bedb-ff83e66ce862&amp;isStartFlow=true&amp;domainid=11e7-8d55-afc32e69-8d1c-edfa8b3b5e37&amp;_resourceid=&amp;currentDate=&amp;content.versions=0&amp;content.mappingId=&amp;parentid=&amp;_backURL=%2Fportal%2Fdynaform%2Fview%2FdisplayView.action%3F_viewid%3D11e7-d40e-59f0238d-bedb-ff83e66ce862%26_currpage%3D1%26application%3D11e7-8d55-9c8815e6-8d1c-edfa8b3b5e37%26_pagelines%3D10%26_rowcount%3D80%26domain%3D11e7-8d55-afc32e69-8d1c-edfa8b3b5e37%26isedit%3D%26isenbled%3D%26_resourceid%3D%26signatureExist%3Dfalse%26FormID%3D11e7-d409-2fb403be-bedb-ff83e66ce862%26ApplicationID%3D11e7-8d55-9c8815e6-8d1c-edfa8b3b5e37%26DocumentID%3D11e7-d8b3-d13498ac-bedb-ff83e66ce862%26mGetBatchDocumentUrl%3Dhttp%253A%252F%252Fbpm.ice.colourlife.com%253A80%252Fportal%252Fportal%252Fdynaform%252Fmysignature%252FgetBatchDocument.action%26mLoginname%3Dtest01%26message%3D%26_pageCount%3D8%26_isdiv%3D%26divid%3D%257B%2523parameters.divid%257D%26tabid%3D%26currentDate%3D%26viewEvent%3D%26_openType%3D1%26_fieldid%3D%26parentid%3D%26treedocid%3D%26isinner%3D%26_sortCol%3D%26_orderby%3D%26_sortStatus%3D%26_remark%3D%26temp_remark%3D&amp;divid=%7B%23parameters.divid%7D&amp;tabid=&amp;defVal=&amp;treedocid=&amp;isinner=&amp;isedit=&amp;content.authorDeptIndex=11e7-8d55-afc8106a-8d1c-edfa8b3b5e37_9959f117-df60-4d1b-a354-776c20ffb8c7_147161b3-2402-454c-84a9-5db0c7efa665_9e21bddf-6e30-4612-8df0-f959b3a2a781_0d3d5ff8-6ddd-4956-b775-66ebcb087509_36cd1ef6-9af1-4203-85a1-c24a119a2185&amp;content.stateInt=0&amp;content.istmp=true&amp;content.lastmodified=&amp;content.auditdate=&amp;content.author.id=44fd2de6-39b1-4510-90fa-d388ac833b11&amp;content.created=2017-12-4+17%3A13%3A51&amp;content.stateLabel=&amp;content.initiator=&amp;content.audituser=&amp;content.authorId=44fd2de6-39b1-4510-90fa-d388ac833b11&amp;content.lastFlowOperation=&amp;content.sign=</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain"></stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path">/portal/dynaform/activity/execute.action?_activityid=11e7-d8d2-c3d77b4e-bedb-ff83e66ce862</stringProp>
+        <stringProp name="HTTPSampler.method">POST</stringProp>
+        <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+        <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+        <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
+        <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+        <boolProp name="HTTPSampler.monitor">false</boolProp>
+        <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+      </HTTPSamplerProxy>
+      <hashTree/>
+      <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="仅一次控制器" enabled="false"/>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="logout" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/portal/H5/logout.jsp</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
